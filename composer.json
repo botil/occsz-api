@@ -1,12 +1,11 @@
 {
     "name": "occsz/occsz-api",
-    "description": "",
-    "license": "license",
+    "description": "OCCSZ api",
+    "license": "proprietary",
     "authors": [
         {
-            "name": "author name",
-            "email": "author email",
-            "homepage": "author homepage"
+            "name": "Laszlo Boti",
+            "email": "laszlo.boti@gmail.com",
         }
     ],
     "homepage": "https://github.com/occsz/occsz-api",
