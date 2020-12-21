@@ -35,13 +35,8 @@ class OccszApi
         $kr->outformat = $outformat;
         $kr->lang = $lang;
 
-        $this->config = config('occsz-api');
-        $options = $this->config['accounts'][$this->config['accountName']];
-
-        $url = $options['partUrl'];
-
         try {
-            $result = $this->OCCSZClient->get($url, ['query' => $kr->toArray() ] );
+            $result = $this->OCCSZClient->get('IMOnline', ['query' => $kr->toArray() ] );
             $res = $result->getBody()->getContents();
             $collect= collect(json_decode(json_encode(simplexml_load_string($res)), true));
 
