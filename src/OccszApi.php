@@ -23,16 +23,11 @@ class OccszApi
      */
     public function __construct($options = null)
     {
-         Log::info('Init begin');
          $this->OCCSZClient = new OCCSZClient();
-         Log::info('Init end');
          //$this->url =  'https://occsztest.e-cegjegyzek.hu/IMOnline';
     }
 
     public function getPrice($doku, $key, $alairt, $outformat, $lang) {
-
-        dd($doku);
-
         $kr = new ArajanlatRequest();
         $kr->doku = $doku;
         $kr->key = $key;
@@ -44,10 +39,6 @@ class OccszApi
         $options = $this->config['accounts'][$this->config['accountName']];
 
         $url = $options['partUrl'];
-
-        dd($url);
-
-        //dd($kr);
 
         try {
             $result = $this->OCCSZClient->get($url, ['query' => $kr->toArray() ] );
