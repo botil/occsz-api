@@ -32,7 +32,7 @@ class OccszApi
         $kr->doku = $doku;
         $kr->key = $key;
         $kr->alairt = $alairt;
-        $kr->outformat = $outformat;
+        //$kr->outformat = $outformat;
         $kr->lang = $lang;
 
         try {
