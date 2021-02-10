@@ -3,7 +3,7 @@
 namespace Occsz\OccszApi\Models;
 
 class KiadmanyRequest
-{   
+{
     /**
      * @var string
      * Kiadmány típusa
@@ -27,7 +27,7 @@ class KiadmanyRequest
      * required
      */
     public $outformat;
-    
+
     /**
      * @var string
      * Cégjegyzékszám
@@ -66,7 +66,7 @@ class KiadmanyRequest
      * Lehetséges értékei: hu|en|de|cz|sk
      * required
      */
-    public $lang;
+    public $LANG;
 
     public function toArray() {
         $result = [];
@@ -88,8 +88,8 @@ class KiadmanyRequest
         if ($this->format != null && \strlen($this->format) > 0)
             $result['format'] = $this->format;
 
-        if ($this->lang != null && \strlen($this->lang) > 0)
-            $result['lang'] = $this->lang;
+        if ($this->LANG != null && \strlen($this->LANG) > 0)
+            $result['LANG'] = $this->LANG;
 
         return $result;
     }
