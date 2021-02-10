@@ -33,8 +33,23 @@ class OccszApi
         $kr->key = $key;
         $kr->alairt = $alairt;
         //$kr->outformat = $outformat;
-        $kr->lang = $lang;
-
+        switch($lang) {
+            case 'hu':
+                $kr->LANG = 'magyar';
+                break;
+            case 'en':
+                $kr->LANG = 'angol';
+                break;
+            case 'de':
+                $kr->LANG = 'nemet';
+                break;
+            case 'cz':
+                $kr->LANG = 'cseh';
+                break;
+            case 'sk':
+                $kr->LANG = 'szlovak';
+                break;
+        }
         try {
             $result = $this->OCCSZClient->get('IMOnline', ['query' => $kr->toArray() ] );
             $res = $result->getBody()->getContents();
