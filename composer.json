@@ -1,6 +1,7 @@
 {
     "name": "occsz/occsz-api",
     "description": "OCCSZ api",
+    "version": "0.0.2",
     "license": "proprietary",
     "authors": [
         {
