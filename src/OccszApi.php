@@ -32,7 +32,7 @@ class OccszApi
         $kr->doku = $doku;
         $kr->key = $key;
         $kr->alairt = $alairt;
-        //$kr->outformat = $outformat;
+        $kr->outformat = $outformat;
         switch($lang) {
             case 'hu':
                 $kr->LANG = 'magyar';
@@ -50,6 +50,7 @@ class OccszApi
                 $kr->LANG = 'szlovak';
                 break;
         }
+        //dd($kr);
         try {
             $result = $this->OCCSZClient->get('IMOnline', ['query' => $kr->toArray() ] );
             $res = $result->getBody()->getContents();
